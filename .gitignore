@@ -1,8 +1,9 @@
 # Ignore everything
 *
 
-# Except apogee-essential-edition HTML files
+# Except apogee-essential-edition HTML files and index
 !apogee-essential-edition*.html
+!index.html
 
 # Except changelog.md and README.md
 !changelog.md
