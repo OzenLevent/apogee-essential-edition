@@ -254,3 +254,116 @@ create a new chat-export file for latest, todays queries
 
 ## Assistant
 Proposed creating a new dated file rather than appending to the existing one. Renamed existing file to `chat-export-2026-06-01.md`. Created this file: `chat-export-2026-06-02.md`.
+
+---
+
+## Git Command Reference
+
+Commands used and explained during this session.
+
+### Initialize a repository
+```bash
+git init
+```
+
+### Stage files
+```bash
+git add filename.html       # stage a specific file
+git add .                   # stage all new and changed files
+```
+
+### Commit
+```bash
+git commit -m "your message"
+```
+
+### Push to GitHub
+```bash
+git push
+# or with explicit remote and branch:
+git push origin master
+```
+
+### Pull from GitHub (sync local with remote)
+```bash
+git pull
+```
+
+### Delete a file from repo AND local folder
+```bash
+git rm filename.html
+git commit -m "Remove filename"
+git push
+```
+
+### Delete a file from repo ONLY (keep locally)
+```bash
+git rm --cached filename.html
+git commit -m "Remove filename from repo"
+git push
+```
+
+### Check status (what has changed)
+```bash
+git status
+```
+
+### View commit history
+```bash
+git log --oneline
+```
+
+### Set global identity
+```bash
+git config --global user.name "Levent Ozen"
+git config --global user.email "levent.ozen@eco3.com"
+```
+
+### Store credentials (never prompt for password again)
+```bash
+git config --global credential.helper store
+```
+
+### Rewrite commit author history
+```bash
+# Run via Git Bash:
+git filter-branch --env-filter '
+export GIT_AUTHOR_NAME="Levent Ozen"
+export GIT_AUTHOR_EMAIL="levent.ozen@eco3.com"
+export GIT_COMMITTER_NAME="Levent Ozen"
+export GIT_COMMITTER_EMAIL="levent.ozen@eco3.com"
+' --tag-name-filter cat -- --branches --tags
+git push --force origin master
+```
+
+### .gitignore — track only specific files
+```
+# Ignore everything
+*
+
+# Except apogee-essential-edition HTML files
+!apogee-essential-edition*.html
+
+# Except specific markdown files
+!changelog.md
+!README.md
+!chat-export-*.md
+
+# Always track .gitignore itself
+!.gitignore
+```
+
+### Create a GitHub repository from the CLI
+```bash
+gh repo create repo-name --public --source . --remote origin --push
+```
+
+### Check remote URL
+```bash
+git remote -v
+```
+
+### List all tracked files
+```bash
+git ls-files
+```
