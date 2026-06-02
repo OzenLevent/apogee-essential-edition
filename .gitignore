@@ -4,9 +4,10 @@
 # Except apogee-essential-edition HTML files
 !apogee-essential-edition*.html
 
-# Except changelog.md and README.md
+# Except changelog.md, README.md and dated chat exports
 !changelog.md
 !README.md
+!chat-export-*.md
 
 # Always track .gitignore itself
 !.gitignore
