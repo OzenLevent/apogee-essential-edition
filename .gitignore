@@ -4,8 +4,9 @@
 # Except HTML files
 !*.html
 
-# Except changelog.md
+# Except changelog.md and README.md
 !changelog.md
+!README.md
 
 # Always track .gitignore itself
 !.gitignore
